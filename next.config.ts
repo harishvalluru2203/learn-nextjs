@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  experimental: {
+    instrumentationHook: true,
+  },
+  env: {
+    MSW_ENABLED: process.env.MSW_ENABLED,
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
